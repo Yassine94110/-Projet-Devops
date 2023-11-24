@@ -1,15 +1,18 @@
-const express = require('express')
-const app = express()
-const port = 3000
+// Importation d'Express
+const express = require('express');
 
-app.get('/chicken', (req, res) => {
-  res.send('poulet')
-})
+// Création d'une nouvelle application Express
+const app = express();
 
-app.get('/nessim', (req, res) => {
-    res.send('dog')
-  })
+// Définition du port
+const port = 3000;
 
+// Route GET pour répondre 'Hello' à la racine
+app.get('/', (req, res) => {
+  res.send('Hello');
+});
+
+// Démarrage du serveur
 app.listen(port, () => {
-  console.log(` le port : ${port}`)
-})
+  console.log(`Server running at http://localhost:${port}/`);
+});
